@@ -3,46 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JAKE THAYNE // Portfolio</title>
+  <title>Jake Thayne — Discord Bot &amp; Community Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Grain overlay -->
   <div class="grain" aria-hidden="true"></div>
-
-  <!-- Scanline overlay -->
-  <div class="scanlines" aria-hidden="true"></div>
 
   <!-- ════════════════════════════════════
        NAV
   ════════════════════════════════════ -->
   <nav class="nav">
-    <div class="nav-logo">
-      <img src="https://i.postimg.cc/MKgJL1Dh/pfp.jpg" alt="SOD Logo" class="nav-logo-img" />
-      <span class="nav-logo-text">JAKE THAYNE</span>
-    </div>
+    <a href="#hero" class="nav-logo">
+      <img src="PLACEHOLDER-LOGO.jpg" alt="Jake Thayne" class="nav-logo-img" />
+      <span class="nav-logo-text">Jake Thayne</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="#about" class="nav-link">» ABOUT</a></li>
-      <li><a href="#stack" class="nav-link">» WORK</a></li>
-      <li><a href="#work" class="nav-link">» WORK</a></li>
-      <li><a href="#connect" class="nav-link">» CONNECT</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#stack" class="nav-link">Skills</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#connect" class="nav-link">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#about" class="nav-link">» ABOUT</a></li>
-      <li><a href="#stack" class="nav-link">» WORK</a></li>
-      <li><a href="#work" class="nav-link">» WORK</a></li>
-      <li><a href="#connect" class="nav-link">» CONNECT</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#stack" class="nav-link">Skills</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#connect" class="nav-link">Contact</a></li>
     </ul>
   </div>
 
@@ -50,254 +45,220 @@
        HERO
   ════════════════════════════════════ -->
   <section class="hero" id="hero">
-
-    <!-- Background decorative number -->
-    <div class="hero-bg-num" aria-hidden="true">01</div>
-
-    <!-- Vertical side label -->
-    <div class="hero-side-label" aria-hidden="true">
-      <span>SYS // ONLINE</span>
+    <div class="hero-bg">
+      <img src="PLACEHOLDER-HERO-BG.jpg" alt="" class="hero-bg-img" />
+      <div class="hero-bg-gradient"></div>
     </div>
 
     <div class="hero-content">
+      <p class="hero-eyebrow" data-reveal>Bot Developer &amp; Community Builder</p>
 
-      <div class="hero-top-tag" data-reveal>
-        <span class="chevrons">»»</span>
-        <span class="tag-text">THE GREATEST</span>
-        <span class="chevrons">»»»</span>
+      <h1 class="hero-name" data-reveal data-delay="100">Jake&nbsp;Thayne</h1>
+
+      <p class="hero-sub" data-reveal data-delay="200">
+        I build the tools and infrastructure that hold large communities together —
+        custom Discord bots, moderation systems, and server architecture that's
+        actually built to last.
+      </p>
+
+      <div class="hero-actions" data-reveal data-delay="300">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#connect" class="btn btn-ghost">Get in touch</a>
       </div>
 
-      <h1 class="hero-handle" data-reveal data-delay="100">
-        <span class="bracket">{</span>
-        <span class="handle-inner">
-          <span class="handle-char" style="--i:0">S</span><span
-          class="handle-char" style="--i:1">A</span><span
-          class="handle-char" style="--i:2">I</span><span
-          class="handle-char" style="--i:3">N</span><span
-          class="handle-char" style="--i:4">T</span><span
-          class="handle-char" style="--i:5">O</span><span
-          class="handle-char" style="--i:6">F</span><span
-          class="handle-char" style="--i:7">D</span><span
-          class="handle-char" style="--i:8">E</span><span
-          class="handle-char" style="--i:9">S</span><span
-          class="handle-char" style="--i:10">O</span><span
-          class="handle-char" style="--i:11">L</span><span
-          class="handle-char" style="--i:12">A</span><span
-          class="handle-char" style="--i:13">T</span><span
-          class="handle-char" style="--i:14">I</span><span
-          class="handle-char" style="--i:15">O</span><span
-          class="handle-char" style="--i:16">N</span>
-        </span>
-        <span class="bracket">}</span>
-      </h1>
-
-      <div class="hero-descriptor" data-reveal data-delay="200">
-        BOT DEVELOPER <span class="divider-slash">//</span> COMMUNITY MAKER
+      <div class="status-pill" data-reveal data-delay="350">
+        <span class="status-dot"></span>
+        Available for new projects
       </div>
+    </div>
 
-      <div class="hero-pfp-row" data-reveal data-delay="300">
-        <div class="hero-pfp-frame">
-          <div class="frame-corner tl"></div>
-          <div class="frame-corner tr"></div>
-          <div class="frame-corner bl"></div>
-          <div class="frame-corner br"></div>
-          <img src="https://i.postimg.cc/T32NC18J/4587ad358bee9053a09a2daf9849d373.jpg" alt="saintofdesolation" class="hero-pfp" />
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="mono">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="banner-divider" aria-hidden="true">
+    <img src="PLACEHOLDER-BANNER-1.jpg" alt="" />
+  </div>
+
+  <!-- ════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="section-label" data-reveal>About</div>
+
+    <div class="about-grid">
+
+      <div class="about-portrait" data-reveal>
+        <div class="portrait-frame">
+          <img src="PLACEHOLDER-PORTRAIT.jpg" alt="Jake Thayne" />
         </div>
-        <div class="hero-bio-short">
-          <p class="bio-line">Operating in the digital shadows.</p>
-          <p class="bio-line">Advanced MAKERure.</p>
-          <p class="bio-line">Custom automation.</p>
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            AVAILABLE FOR OPERATIONS
+      </div>
+
+      <div class="about-content" data-reveal data-delay="150">
+        <h2 class="about-heading">A bit about me.</h2>
+        <p class="about-body">
+          I'm Jake — I design and build the back-end of online communities. Most of
+          my time goes into Discord: custom bots, moderation tooling, and the kind
+          of server structure that keeps things running smoothly once a community
+          starts to grow.
+        </p>
+        <p class="about-body">
+          Over the years I've moderated and developed for servers ranging from
+          small startups to communities of 30,000+ members, which means I've seen
+          what breaks at scale — and I build with that in mind from day one.
+        </p>
+
+        <div class="metrics-row">
+          <div class="metric-item">
+            <div class="metric-value">30K<span class="metric-unit">+</span></div>
+            <div class="metric-label">Members in the largest community I've moderated</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">5K<span class="metric-unit">+</span></div>
+            <div class="metric-label">Member servers I've held admin roles in</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">10<span class="metric-unit">+</span></div>
+            <div class="metric-label">Custom bots built for clients &amp; communities</div>
           </div>
         </div>
       </div>
 
     </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <span class="mono">SCROLL //</span>
-      <div class="scroll-line"></div>
-    </div>
-
   </section>
 
   <!-- ════════════════════════════════════
-       ABOUT / MATRIX
-  ════════════════════════════════════ -->
-  <section class="about section" id="about">
-
-    <div class="section-label" data-reveal>
-      <span class="chevrons">»</span> MATRIX // 01
-    </div>
-
-    <div class="about-grid">
-
-      <div class="about-left" data-reveal>
-        <h2 class="about-heading">
-          The<br /><em>Operator.</em>
-        </h2>
-        <p class="about-body">
-          We often meet people who we believe to be friends. But they're just snakes,
-          waiting to strike. 
-          Be. Wary.
-        </p>
-        <p class="about-body">
-          Jake is a person who can make websites like....this.
-        </p>
-      </div>
-
-      <div class="about-right" data-reveal data-delay="150">
-        <div class="metrics-title mono">[ SYS_DATA // OPERATIONAL METRICS ]</div>
-
-        <div class="metric-item">
-          <div class="metric-label mono">Membercount of biggest server I've moderated in</div>
-          <div class="metric-value">30,000<span class="metric-unit">+ MEMBERS</span></div>
-          <div class="metric-bar"><div class="metric-fill" style="--w:95%"></div></div>
-        </div>
-
-        <div class="metric-item">
-          <div class="metric-label mono">Membercount of server I've been admin in</div>
-          <div class="metric-value">5,000<span class="metric-unit">+ MEMBER SERVERS</span></div>
-          <div class="metric-bar"><div class="metric-fill" style="--w:80%"></div></div>
-        </div>
-
-        <div class="metric-item">
-          <div class="metric-label mono">Server Developer</div>
-          <div class="metric-value">MULTIPLE<span class="metric-unit">SERVERS</span></div>
-          <div class="metric-bar"><div class="metric-fill" style="--w:100%"></div></div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ════════════════════════════════════
-       TECH STACK
+       SKILLS / STACK
   ════════════════════════════════════ -->
   <section class="stack section" id="stack">
-
-    <div class="section-label" data-reveal>
-      <span class="chevrons">»</span> STACK // 02
-    </div>
-
-    <h2 class="section-heading" data-reveal>CAPABILITIES<br /><span class="dim">MATRIX</span></h2>
+    <div class="section-label" data-reveal>Skills</div>
+    <h2 class="section-heading" data-reveal>What I work with</h2>
 
     <div class="stack-grid">
 
       <div class="stack-group" data-reveal>
-        <div class="stack-group-label mono">[ LANGUAGES ]</div>
+        <div class="stack-group-label">Languages</div>
         <div class="stack-pills">
-          <span class="pill">{ JAVASCRIPT }</span>
-          <span class="pill">{ PYTHON }</span>
-          <span class="pill">{ HTML5 }</span>
-          <span class="pill">{ CSS3 }</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Python</span>
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
         </div>
       </div>
 
       <div class="stack-group" data-reveal data-delay="100">
-        <div class="stack-group-label mono">[ SPECIALIZATIONS ]</div>
+        <div class="stack-group-label">Specializations</div>
         <div class="stack-pills">
-          <span class="pill">{ BOT_DEV }</span>
-          <span class="pill">{ SERVER_INFRA }</span>
-          <span class="pill">{ GAME_MODDING }</span>
-          <span class="pill">{ MODERATION }</span>
+          <span class="pill">Bot Development</span>
+          <span class="pill">Server Infrastructure</span>
+          <span class="pill">Game Modding</span>
+          <span class="pill">Moderation Systems</span>
         </div>
       </div>
 
       <div class="stack-group" data-reveal data-delay="200">
-        <div class="stack-group-label mono">[ PLATFORMS ]</div>
+        <div class="stack-group-label">Platforms &amp; Tools</div>
         <div class="stack-pills">
-          <span class="pill">{ DISCORD.JS }</span>
-          <span class="pill">{ NODE.JS }</span>
-          <span class="pill">{ DISCORD_API }</span>
-          <span class="pill">{ GITHUB }</span>
+          <span class="pill">Discord.js</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Discord API</span>
+          <span class="pill">GitHub</span>
         </div>
       </div>
 
     </div>
-
   </section>
 
+  <div class="banner-divider" aria-hidden="true">
+    <img src="PLACEHOLDER-BANNER-2.jpg" alt="" />
+  </div>
+
   <!-- ════════════════════════════════════
-       WORK / PROJECTS
+       WORK
   ════════════════════════════════════ -->
   <section class="work section" id="work">
-
-    <div class="section-label" data-reveal>
-      <span class="chevrons">»</span> WORK // 03
-    </div>
-
-    <h2 class="section-heading" data-reveal>OPERATIONAL<br /><span class="dim">RECORD</span></h2>
+    <div class="section-label" data-reveal>Work</div>
+    <h2 class="section-heading" data-reveal>What I build</h2>
 
     <div class="work-list">
 
       <div class="work-item" data-reveal>
-        <div class="work-num mono">01</div>
         <div class="work-body">
-          <div class="work-title">CUSTOM_BOT_MAKER</div>
-          <div class="work-tags mono">{ DISCORD.JS • PYTHON }</div>
-          <p class="work-desc">Bespoke automation, moderation systems, and custom tools engineered for precision. From utility bots to full moderation suites.</p>
+          <div class="work-title">Custom Bot Development</div>
+          <div class="work-tags">Discord.js · Python</div>
+          <p class="work-desc">
+            Bespoke automation, moderation tools, and utility bots designed around
+            how a specific community actually works — not a one-size-fits-all template.
+          </p>
         </div>
         <div class="work-arrow">→</div>
       </div>
 
       <div class="work-item" data-reveal data-delay="100">
-        <div class="work-num mono">02</div>
         <div class="work-body">
-          <div class="work-title">COMMUNITY_INFRASTRUCTURE</div>
-          <div class="work-tags mono">{ MAKERURE }</div>
-          <p class="work-desc">Scale-ready server setups, permission matrices, and security hardening for 30k+ user environments. Built to endure.</p>
+          <div class="work-title">Community Infrastructure</div>
+          <div class="work-tags">Server Architecture</div>
+          <p class="work-desc">
+            Scalable server setups, permission structures, and security practices
+            built for communities of 30,000+ members — and built to hold up over time.
+          </p>
         </div>
         <div class="work-arrow">→</div>
       </div>
 
       <div class="work-item" data-reveal data-delay="200">
-        <div class="work-num mono">03</div>
         <div class="work-body">
-          <div class="work-title">GAME_MODS_&amp;_INTEGRATIONS</div>
-          <div class="work-tags mono">{ DEVELOPMENT }</div>
-          <p class="work-desc">Custom game modifications, environmental development, and cross-platform integrations that blur the line between game and community.</p>
+          <div class="work-title">Game Mods &amp; Integrations</div>
+          <div class="work-tags">Development</div>
+          <p class="work-desc">
+            Custom game modifications and cross-platform integrations that connect
+            a community's Discord with the games they're actually playing.
+          </p>
         </div>
         <div class="work-arrow">→</div>
       </div>
 
     </div>
-
   </section>
 
   <!-- ════════════════════════════════════
        CONNECT / FOOTER
   ════════════════════════════════════ -->
   <section class="connect section" id="connect">
-
-    <div class="section-label" data-reveal>
-      <span class="chevrons">»</span> CONNECT // 04
-    </div>
+    <div class="section-label" data-reveal>Contact</div>
 
     <div class="connect-cta" data-reveal>
-      <div class="cta-pre mono">// INITIATE CONTACT</div>
-      <h2 class="cta-heading">SYSTEM_<br />INIT.</h2>
+      <h2 class="cta-heading">Let's build<br />something good.</h2>
+      <p class="cta-sub">Have a project in mind, or just want to talk shop? Reach out.</p>
     </div>
 
     <div class="connect-links" data-reveal data-delay="150">
-      <a href="mailto:jake@jakethyane.xyz" class="contact-link"
-        26</span>
+      <a href="mailto:PLACEHOLDER@email.com" class="contact-link">
+        <span class="cl-label">Email</span>
+        <span class="cl-value">PLACEHOLDER@email.com</span>
+        <span class="cl-arrow">→</span>
+      </a>
+      <a href="PLACEHOLDER-DISCORD-LINK" class="contact-link">
+        <span class="cl-label">Discord</span>
+        <span class="cl-value">PLACEHOLDER#0000</span>
+        <span class="cl-arrow">→</span>
+      </a>
+      <a href="PLACEHOLDER-GITHUB-LINK" class="contact-link">
+        <span class="cl-label">GitHub</span>
+        <span class="cl-value">github.com/PLACEHOLDER</span>
         <span class="cl-arrow">→</span>
       </a>
     </div>
 
     <footer class="footer" data-reveal data-delay="250">
       <div class="footer-logo">
-        <img src="https://i.postimg.cc/MKgJL1Dh/pfp.jpg" alt="" class="footer-logo-img" />
-        <span class="mono dim">SAINTOFDESOLATION</span>
+        <img src="PLACEHOLDER-LOGO.jpg" alt="" class="footer-logo-img" />
+        <span class="dim">Jake Thayne</span>
       </div>
-      <div class="footer-copy mono dim">
-        © 2025 // ALL SYSTEMS OPERATIONAL
+      <div class="footer-copy dim">
+        © 2025
       </div>
     </footer>
 
