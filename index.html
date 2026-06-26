@@ -1,81 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Thayne | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAINTOFDESOLATION // Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="container">
-        <header class="cyber-hero">
-            <div class="hero-left">
-                <span class="chevron-decor">»</span>
-                <div class="countdown-wrapper">
-                    <span class="bracket">{</span>
-                    <span class="countdown-text">COUNTDOWN</span>
-                    <span class="bracket">}</span>
-                </div>
-                <h2 class="ghost-number">01</h2>
-            </div>
-            
-            <div class="hero-right">
-                <div class="tagline">THE GREATEST ❯❯❯❯</div>
-                <h1 class="hero-number" id="interactive-number">00</h1>
-                <p class="hero-subtitle">Jake Thayne // <span id="dynamic-text"></span></p>
-            </div>
-        </header>
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
 
-        <main>
-            <div class="grid">
-                <div class="card">
-                    <h3>💻 Vibecoder</h3>
-                    <p>Crafting clean, responsive, and functional front-end experiences from scratch.</p>
-                    <div class="tech-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
+  <!-- Scanline overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
 
-                <div class="card">
-                    <h3>🤖 Bot Dev</h3>
-                    <p>Designing custom automation tools and interactive bots to elevate platform experiences.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">APIs</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                </div>
+  <!-- ════════════════════════════════════
+       NAV
+  ════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="logo.png" alt="SOD Logo" class="nav-logo-img" />
+      <span class="nav-logo-text">SOD</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">» ABOUT</a></li>
+      <li><a href="#stack" class="nav-link">» STACK</a></li>
+      <li><a href="#work" class="nav-link">» WORK</a></li>
+      <li><a href="#connect" class="nav-link">» CONNECT</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-                <div class="card">
-                    <h3>⚙️ Server Dev</h3>
-                    <p>Setting up, configuring, and optimizing infrastructure for smooth project deployments.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Backend</span>
-                        <span class="tag">Config</span>
-                        <span class="tag">GitHub</span>
-                    </div>
-                </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="nav-link">» ABOUT</a></li>
+      <li><a href="#stack" class="nav-link">» STACK</a></li>
+      <li><a href="#work" class="nav-link">» WORK</a></li>
+      <li><a href="#connect" class="nav-link">» CONNECT</a></li>
+    </ul>
+  </div>
 
-                <div class="card">
-                    <h3>🛡️ Community Mod</h3>
-                    <p>Years of hands-on experience managing communities, enforcing rules, and keeping spaces safe and engaging.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Management</span>
-                        <span class="tag">Moderation</span>
-                        <span class="tag">Support</span>
-                    </div>
-                </div>
-            </div>
-        </main>
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="hero" id="hero">
 
-        <footer>
-            <p>&copy; 2026 Jake Thayne. Built with HTML, CSS, and pure vibes.</p>
-        </footer>
+    <!-- Background decorative number -->
+    <div class="hero-bg-num" aria-hidden="true">01</div>
+
+    <!-- Vertical side label -->
+    <div class="hero-side-label" aria-hidden="true">
+      <span>SYS // ONLINE</span>
     </div>
 
-    <script src="script.js"></script>
+    <div class="hero-content">
+
+      <div class="hero-top-tag" data-reveal>
+        <span class="chevrons">»»</span>
+        <span class="tag-text">THE GREATEST</span>
+        <span class="chevrons">»»»</span>
+      </div>
+
+      <h1 class="hero-handle" data-reveal data-delay="100">
+        <span class="bracket">{</span>
+        <span class="handle-inner">
+          <span class="handle-char" style="--i:0">S</span><span
+          class="handle-char" style="--i:1">A</span><span
+          class="handle-char" style="--i:2">I</span><span
+          class="handle-char" style="--i:3">N</span><span
+          class="handle-char" style="--i:4">T</span><span
+          class="handle-char" style="--i:5">O</span><span
+          class="handle-char" style="--i:6">F</span><span
+          class="handle-char" style="--i:7">D</span><span
+          class="handle-char" style="--i:8">E</span><span
+          class="handle-char" style="--i:9">S</span><span
+          class="handle-char" style="--i:10">O</span><span
+          class="handle-char" style="--i:11">L</span><span
+          class="handle-char" style="--i:12">A</span><span
+          class="handle-char" style="--i:13">T</span><span
+          class="handle-char" style="--i:14">I</span><span
+          class="handle-char" style="--i:15">O</span><span
+          class="handle-char" style="--i:16">N</span>
+        </span>
+        <span class="bracket">}</span>
+      </h1>
+
+      <div class="hero-descriptor" data-reveal data-delay="200">
+        BOT DEVELOPER <span class="divider-slash">//</span> COMMUNITY ARCHITECT
+      </div>
+
+      <div class="hero-pfp-row" data-reveal data-delay="300">
+        <div class="hero-pfp-frame">
+          <div class="frame-corner tl"></div>
+          <div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div>
+          <div class="frame-corner br"></div>
+          <img src="pfp.jpg" alt="saintofdesolation" class="hero-pfp" />
+        </div>
+        <div class="hero-bio-short">
+          <p class="bio-line">Operating in the digital shadows.</p>
+          <p class="bio-line">Advanced architecture.</p>
+          <p class="bio-line">Custom automation.</p>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            AVAILABLE FOR OPERATIONS
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="mono">SCROLL //</span>
+      <div class="scroll-line"></div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════
+       ABOUT / MATRIX
+  ════════════════════════════════════ -->
+  <section class="about section" id="about">
+
+    <div class="section-label" data-reveal>
+      <span class="chevrons">»</span> MATRIX // 01
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-left" data-reveal>
+        <h2 class="about-heading">
+          The<br /><em>Operator.</em>
+        </h2>
+        <p class="about-body">
+          Operating in the digital shadows. Specializing in advanced server architecture,
+          custom bot development, and high-scale community operations.
+        </p>
+        <p class="about-body">
+          Every system built to withstand pressure. Every server designed to scale.
+          Every automation engineered with precision.
+        </p>
+      </div>
+
+      <div class="about-right" data-reveal data-delay="150">
+        <div class="metrics-title mono">[ SYS_DATA // OPERATIONAL METRICS ]</div>
+
+        <div class="metric-item">
+          <div class="metric-label mono">MAX_CAPACITY</div>
+          <div class="metric-value">30,000<span class="metric-unit">+ MEMBERS</span></div>
+          <div class="metric-bar"><div class="metric-fill" style="--w:95%"></div></div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label mono">SYS_ADMIN</div>
+          <div class="metric-value">5,000<span class="metric-unit">+ MEMBER SERVERS</span></div>
+          <div class="metric-bar"><div class="metric-fill" style="--w:80%"></div></div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label mono">INFRASTRUCTURE</div>
+          <div class="metric-value">MULTIPLE<span class="metric-unit">SERVERS OPTIMIZED</span></div>
+          <div class="metric-bar"><div class="metric-fill" style="--w:100%"></div></div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label mono">UPTIME</div>
+          <div class="metric-value">99.9<span class="metric-unit">% SLA TARGET</span></div>
+          <div class="metric-bar"><div class="metric-fill" style="--w:99%"></div></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════
+       TECH STACK
+  ════════════════════════════════════ -->
+  <section class="stack section" id="stack">
+
+    <div class="section-label" data-reveal>
+      <span class="chevrons">»</span> STACK // 02
+    </div>
+
+    <h2 class="section-heading" data-reveal>CAPABILITIES<br /><span class="dim">MATRIX</span></h2>
+
+    <div class="stack-grid">
+
+      <div class="stack-group" data-reveal>
+        <div class="stack-group-label mono">[ LANGUAGES ]</div>
+        <div class="stack-pills">
+          <span class="pill">{ JAVASCRIPT }</span>
+          <span class="pill">{ PYTHON }</span>
+          <span class="pill">{ HTML5 }</span>
+          <span class="pill">{ CSS3 }</span>
+        </div>
+      </div>
+
+      <div class="stack-group" data-reveal data-delay="100">
+        <div class="stack-group-label mono">[ SPECIALIZATIONS ]</div>
+        <div class="stack-pills">
+          <span class="pill">{ BOT_DEV }</span>
+          <span class="pill">{ SERVER_INFRA }</span>
+          <span class="pill">{ GAME_MODDING }</span>
+          <span class="pill">{ MODERATION }</span>
+        </div>
+      </div>
+
+      <div class="stack-group" data-reveal data-delay="200">
+        <div class="stack-group-label mono">[ PLATFORMS ]</div>
+        <div class="stack-pills">
+          <span class="pill">{ DISCORD.JS }</span>
+          <span class="pill">{ NODE.JS }</span>
+          <span class="pill">{ DISCORD_API }</span>
+          <span class="pill">{ GITHUB }</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════
+       WORK / PROJECTS
+  ════════════════════════════════════ -->
+  <section class="work section" id="work">
+
+    <div class="section-label" data-reveal>
+      <span class="chevrons">»</span> WORK // 03
+    </div>
+
+    <h2 class="section-heading" data-reveal>OPERATIONAL<br /><span class="dim">RECORD</span></h2>
+
+    <div class="work-list">
+
+      <div class="work-item" data-reveal>
+        <div class="work-num mono">01</div>
+        <div class="work-body">
+          <div class="work-title">CUSTOM_BOT_ARCHITECT</div>
+          <div class="work-tags mono">{ DISCORD.JS • PYTHON }</div>
+          <p class="work-desc">Bespoke automation, moderation systems, and custom tools engineered for precision. From utility bots to full moderation suites.</p>
+        </div>
+        <div class="work-arrow">→</div>
+      </div>
+
+      <div class="work-item" data-reveal data-delay="100">
+        <div class="work-num mono">02</div>
+        <div class="work-body">
+          <div class="work-title">COMMUNITY_INFRASTRUCTURE</div>
+          <div class="work-tags mono">{ ARCHITECTURE }</div>
+          <p class="work-desc">Scale-ready server setups, permission matrices, and security hardening for 30k+ user environments. Built to endure.</p>
+        </div>
+        <div class="work-arrow">→</div>
+      </div>
+
+      <div class="work-item" data-reveal data-delay="200">
+        <div class="work-num mono">03</div>
+        <div class="work-body">
+          <div class="work-title">GAME_MODS_&amp;_INTEGRATIONS</div>
+          <div class="work-tags mono">{ DEVELOPMENT }</div>
+          <p class="work-desc">Custom game modifications, environmental development, and cross-platform integrations that blur the line between game and community.</p>
+        </div>
+        <div class="work-arrow">→</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════
+       CONNECT / FOOTER
+  ════════════════════════════════════ -->
+  <section class="connect section" id="connect">
+
+    <div class="section-label" data-reveal>
+      <span class="chevrons">»</span> CONNECT // 04
+    </div>
+
+    <div class="connect-cta" data-reveal>
+      <div class="cta-pre mono">// INITIATE CONTACT</div>
+      <h2 class="cta-heading">SYSTEM_<br />INIT.</h2>
+    </div>
+
+    <div class="connect-links" data-reveal data-delay="150">
+      <a href="mailto:jake@jakethyane.xyz" class="contact-link">
+        <span class="cl-label mono">EMAIL</span>
+        <span class="cl-value">jake@jakethyane.xyz</span>
+        <span class="cl-arrow">→</span>
+      </a>
+      <a href="https://discord.com/users/saintofdesolation" target="_blank" rel="noopener" class="contact-link">
+        <span class="cl-label mono">DISCORD</span>
+        <span class="cl-value">@saintofdesolation</span>
+        <span class="cl-arrow">→</span>
+      </a>
+    </div>
+
+    <footer class="footer" data-reveal data-delay="250">
+      <div class="footer-logo">
+        <img src="logo.png" alt="" class="footer-logo-img" />
+        <span class="mono dim">SAINTOFDESOLATION</span>
+      </div>
+      <div class="footer-copy mono dim">
+        © 2025 // ALL SYSTEMS OPERATIONAL
+      </div>
+    </footer>
+
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
