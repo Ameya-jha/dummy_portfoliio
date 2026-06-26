@@ -3,261 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevPortfolio // Stats Center</title>
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --accent-color: #0284c7;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .portfolio-container {
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        header {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
-
-        header h1 span {
-            color: var(--accent-color);
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-        }
-
-        .stat-card h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--text-main);
-            transition: color 0.2s ease;
-        }
-
-        .stat-number.updating {
-            color: var(--accent-color);
-        }
-
-        .stat-trend {
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .trend-up { color: #16a34a; }
-        .trend-down { color: #dc2626; }
-
-        .projects-section {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-        }
-
-        .projects-section h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .project-list {
-            list-style: none;
-        }
-
-        .project-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-name {
-            font-weight: 600;
-        }
-
-        .project-status {
-            font-size: 0.85rem;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-        }
-    </style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="portfolio-container">
+    <div class="container">
         <header>
-            <h1>Alex Developer <span>.portfolio</span></h1>
-            <p>Full-Stack Engineer & Live Data Simulator</p>
+            <h1>Hello, I'm <span class="highlight">YourName</span></h1>
+            <p>I'm a <span id="dynamic-text"></span></p>
         </header>
 
-        <main class="stats-grid">
-            <div class="stat-card">
-                <h3>Lines of Code written</h3>
-                <div class="stat-number" id="stat-loc">142,500</div>
-                <div class="stat-trend trend-up">▲ Live updating</div>
-            </div>
+        <main>
+            <div class="grid">
+                <div class="card">
+                    <h3>💻 Vibecoder</h3>
+                    <p>Crafting clean, responsive, and functional front-end experiences from scratch.</p>
+                    <div class="tech-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
 
-            <div class="stat-card">
-                <h3>Server Uptime</h3>
-                <div class="stat-number" id="stat-uptime">99.98%</div>
-                <div class="stat-trend trend-up">▲ Stable</div>
-            </div>
+                <div class="card">
+                    <h3>🤖 Bot Dev</h3>
+                    <p>Designing custom automation tools and interactive bots to elevate platform experiences.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">APIs</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
 
-            <div class="stat-card">
-                <h3>Coffee Consumed (L)</h3>
-                <div class="stat-number" id="stat-coffee">342</div>
-                <div class="stat-trend trend-up">▲ Increasing</div>
-            </div>
+                <div class="card">
+                    <h3>⚙️ Server Dev</h3>
+                    <p>Setting up, configuring, and optimizing infrastructure for smooth project deployments.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Backend</span>
+                        <span class="tag">Config</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                </div>
 
-            <div class="stat-card">
-                <h3>Global Requests / min</h3>
-                <div class="stat-number" id="stat-requests">1,240</div>
-                <div class="stat-trend standard" id="trend-req">~ Constant</div>
+                <div class="card">
+                    <h3>🛡️ Community Mod</h3>
+                    <p>Years of hands-on experience managing communities, enforcing rules, and keeping spaces safe and engaging.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Management</span>
+                        <span class="tag">Moderation</span>
+                        <span class="tag">Support</span>
+                    </div>
+                </div>
             </div>
         </main>
 
-        <section class="projects-section">
-            <h2>Active Deployments</h2>
-            <ul class="project-list">
-                <li class="project-item">
-                    <span class="project-name">Project NeuralNet Dashboard</span>
-                    <span class="project-status">Operational</span>
-                </li>
-                <li class="project-item">
-                    <span class="project-name">Quantum API Gateway</span>
-                    <span class="project-status">Operational</span>
-                </li>
-                <li class="project-item">
-                    <span class="project-name">Crypto-Ticker Microservice</span>
-                    <span class="project-status" style="background-color: #ea580c;">Syncing</span>
-                </li>
-            </ul>
-        </section>
+        <footer>
+            <p>&copy; 2026 YourName. Built with HTML, CSS, and pure vibes.</p>
+        </footer>
     </div>
 
-    <script>
-        let loc = 142500;
-        let coffee = 342;
-
-        function updateStatistics() {
-            // 1. Update Lines of Code
-            const locElement = document.getElementById('stat-loc');
-            loc += Math.floor(Math.random() * 12) + 1; 
-            flashTrack(locElement);
-            locElement.textContent = loc.toLocaleString();
-
-            // 2. Update Server Uptime
-            const uptimeElement = document.getElementById('stat-uptime');
-            const uptime = (99.90 + Math.random() * 0.1).toFixed(2);
-            uptimeElement.textContent = uptime + '%';
-
-            // 3. Update Coffee
-            if (Math.random() > 0.7) {
-                const coffeeElement = document.getElementById('stat-coffee');
-                coffee += 1;
-                flashTrack(coffeeElement);
-                coffeeElement.textContent = coffee;
-            }
-
-            // 4. Update Global Requests
-            const reqElement = document.getElementById('stat-requests');
-            const trendElement = document.getElementById('trend-req');
-            const currentReq = Math.floor(Math.random() * (2500 - 800) + 800);
-            
-            flashTrack(reqElement);
-            reqElement.textContent = currentReq.toLocaleString();
-
-            if (currentReq > 1800) {
-                trendElement.textContent = "▲ High Traffic";
-                trendElement.className = "stat-trend trend-up";
-            } else if (currentReq < 1100) {
-                trendElement.textContent = "▼ Low Traffic";
-                trendElement.className = "stat-trend trend-down";
-            } else {
-                trendElement.textContent = "~ Stable";
-                trendElement.className = "stat-trend";
-                trendElement.style.color = "var(--text-muted)";
-            }
-        }
-
-        function flashTrack(element) {
-            element.classList.add('updating');
-            setTimeout(() => {
-                element.classList.remove('updating');
-            }, 200);
-        }
-
-        setInterval(updateStatistics, 2500);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
