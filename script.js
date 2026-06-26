@@ -1,40 +1,54 @@
-// List of skills to rotate through in the header
 const roles = ["Vibecoder.", "Bot Developer.", "Server Developer.", "Community Moderator."];
 let currentRoleIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
-const dynamicTextElement = document.getElementById("dynamic-text");
 
 function typeEffect() {
+    const dynamicTextElement = document.getElementById("dynamic-text");
+    if (!dynamicTextElement) return;
+
     const currentRole = roles[currentRoleIndex];
     
     if (isDeleting) {
-        // Remove characters
         dynamicTextElement.textContent = currentRole.substring(0, currentCharIndex - 1);
         currentCharIndex--;
     } else {
-        // Add characters
         dynamicTextElement.textContent = currentRole.substring(0, currentCharIndex + 1);
         currentCharIndex++;
     }
 
-    // Set typing speed variables
-    let typingSpeed = isDeleting ? 50 : 100;
+    let typingSpeed = isDeleting ? 40 : 80;
 
-    // If word is completely typed
     if (!isDeleting && currentCharIndex === currentRole.length) {
-        typingSpeed = 2000; // Pause at the end of the word
+        typingSpeed = 2000; 
         isDeleting = true;
-    } 
-    // If word is completely erased
-    else if (isDeleting && currentCharIndex === 0) {
+    } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length; // Move to next role
-        typingSpeed = 500; // Pause before typing next word
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        typingSpeed = 400; 
     }
 
     setTimeout(typeEffect, typingSpeed);
 }
 
-// Start the typing animation once the page loads
-document.addEventListener("DOMContentLoaded", typeEffect);
+function countUp() {
+    const numberElement = document.getElementById("interactive-number");
+    if (!numberElement) return;
+
+    let count = 0;
+    const target = 1; 
+    
+    const interval = setInterval(() => {
+        count++;
+        if (count <= target) {
+            numberElement.textContent = count.toString().padStart(2, '0');
+        } else {
+            clearInterval(interval);
+        }
+    }, 300);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+    countUp();
+});
