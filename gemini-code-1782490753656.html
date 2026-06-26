@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPortfolio // Stats Center</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .portfolio-container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+
+        .stat-number.updating {
+            color: var(--accent-color);
+        }
+
+        .stat-trend {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .trend-up { color: #4ade80; }
+        .trend-down { color: #f87171; }
+
+        .projects-section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .projects-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-name {
+            font-weight: 600;
+        }
+
+        .project-status {
+            font-size: 0.85rem;
+            background-color: #0284c7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        <header>
+            <h1>Alex Developer <span>.portfolio</span></h1>
+            <p>Full-Stack Engineer & Live Data Simulator</p>
+        </header>
+
+        <main class="stats-grid">
+            <div class="stat-card">
+                <h3>Lines of Code written</h3>
+                <div class="stat-number" id="stat-loc">142,500</div>
+                <div class="stat-trend trend-up">▲ Live updating</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Server Uptime</h3>
+                <div class="stat-number" id="stat-uptime">99.98%</div>
+                <div class="stat-trend trend-up">▲ Stable</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Coffee Consumed (L)</h3>
+                <div class="stat-number" id="stat-coffee">342</div>
+                <div class="stat-trend trend-up">▲ Increasing</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Global Requests / min</h3>
+                <div class="stat-number" id="stat-requests">1,240</div>
+                <div class="stat-trend standard" id="trend-req">~ Constant</div>
+            </div>
+        </main>
+
+        <section class="projects-section">
+            <h2>Active Deployments</h2>
+            <ul class="project-list">
+                <li class="project-item">
+                    <span class="project-name">Project NeuralNet Dashboard</span>
+                    <span class="project-status">Operational</span>
+                </li>
+                <li class="project-item">
+                    <span class="project-name">Quantum API Gateway</span>
+                    <span class="project-status">Operational</span>
+                </li>
+                <li class="project-item">
+                    <span class="project-name">Crypto-Ticker Microservice</span>
+                    <span class="project-status" style="background-color: #b45309;">Syncing</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Initial core values
+        let loc = 142500;
+        let coffee = 342;
+
+        function updateStatistics() {
+            // 1. Update Lines of Code (Always goes up slightly)
+            const locElement = document.getElementById('stat-loc');
+            loc += Math.floor(Math.random() * 12) + 1; 
+            flashTrack(locElement);
+            locElement.textContent = loc.toLocaleString();
+
+            // 2. Update Server Uptime (Flaps slightly between 99.90 and 100.00)
+            const uptimeElement = document.getElementById('stat-uptime');
+            const uptime = (99.90 + Math.random() * 0.1).toFixed(2);
+            uptimeElement.textContent = uptime + '%';
+
+            // 3. Update Coffee (Rarely goes up)
+            if (Math.random() > 0.7) {
+                const coffeeElement = document.getElementById('stat-coffee');
+                coffee += 1;
+                flashTrack(coffeeElement);
+                coffeeElement.textContent = coffee;
+            }
+
+            // 4. Update Global Requests (Fluctuates wildly)
+            const reqElement = document.getElementById('stat-requests');
+            const trendElement = document.getElementById('trend-req');
+            const currentReq = Math.floor(Math.random() * (2500 - 800) + 800);
+            
+            flashTrack(reqElement);
+            reqElement.textContent = currentReq.toLocaleString();
+
+            if (currentReq > 1800) {
+                trendElement.textContent = "▲ High Traffic";
+                trendElement.className = "stat-trend trend-up";
+            } else if (currentReq < 1100) {
+                trendElement.textContent = "▼ Low Traffic";
+                trendElement.className = "stat-trend trend-down";
+            } else {
+                trendElement.textContent = "~ Stable";
+                trendElement.className = "stat-trend";
+                trendElement.style.color = "var(--text-muted)";
+            }
+        }
+
+        // Helper function to create a quick glow animation effect when text changes
+        function flashTrack(element) {
+            element.classList.add('updating');
+            setTimeout(() => {
+                element.classList.remove('updating');
+            }, 300);
+        }
+
+        // Run the simulation every 2.5 seconds
+        setInterval(updateStatistics, 2500);
+    </script>
+</body>
+</html>
