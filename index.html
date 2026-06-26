@@ -6,11 +6,12 @@
     <title>DevPortfolio // Stats Center</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --accent-color: #0284c7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
         }
 
         * {
@@ -66,8 +67,9 @@
             background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid #334155;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -75,6 +77,7 @@
         .stat-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
         }
 
         .stat-card h3 {
@@ -89,7 +92,7 @@
             font-size: 2.2rem;
             font-weight: bold;
             color: var(--text-main);
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .stat-number.updating {
@@ -104,14 +107,15 @@
             gap: 0.25rem;
         }
 
-        .trend-up { color: #4ade80; }
-        .trend-down { color: #f87171; }
+        .trend-up { color: #16a34a; }
+        .trend-down { color: #dc2626; }
 
         .projects-section {
             background-color: var(--card-bg);
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid #334155;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
         }
 
         .projects-section h2 {
@@ -125,7 +129,7 @@
 
         .project-item {
             padding: 1rem 0;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -141,7 +145,8 @@
 
         .project-status {
             font-size: 0.85rem;
-            background-color: #0284c7;
+            background-color: var(--accent-color);
+            color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
         }
@@ -194,30 +199,29 @@
                 </li>
                 <li class="project-item">
                     <span class="project-name">Crypto-Ticker Microservice</span>
-                    <span class="project-status" style="background-color: #b45309;">Syncing</span>
+                    <span class="project-status" style="background-color: #ea580c;">Syncing</span>
                 </li>
             </ul>
         </section>
     </div>
 
     <script>
-        // Initial core values
         let loc = 142500;
         let coffee = 342;
 
         function updateStatistics() {
-            // 1. Update Lines of Code (Always goes up slightly)
+            // 1. Update Lines of Code
             const locElement = document.getElementById('stat-loc');
             loc += Math.floor(Math.random() * 12) + 1; 
             flashTrack(locElement);
             locElement.textContent = loc.toLocaleString();
 
-            // 2. Update Server Uptime (Flaps slightly between 99.90 and 100.00)
+            // 2. Update Server Uptime
             const uptimeElement = document.getElementById('stat-uptime');
             const uptime = (99.90 + Math.random() * 0.1).toFixed(2);
             uptimeElement.textContent = uptime + '%';
 
-            // 3. Update Coffee (Rarely goes up)
+            // 3. Update Coffee
             if (Math.random() > 0.7) {
                 const coffeeElement = document.getElementById('stat-coffee');
                 coffee += 1;
@@ -225,7 +229,7 @@
                 coffeeElement.textContent = coffee;
             }
 
-            // 4. Update Global Requests (Fluctuates wildly)
+            // 4. Update Global Requests
             const reqElement = document.getElementById('stat-requests');
             const trendElement = document.getElementById('trend-req');
             const currentReq = Math.floor(Math.random() * (2500 - 800) + 800);
@@ -246,15 +250,13 @@
             }
         }
 
-        // Helper function to create a quick glow animation effect when text changes
         function flashTrack(element) {
             element.classList.add('updating');
             setTimeout(() => {
                 element.classList.remove('updating');
-            }, 300);
+            }, 200);
         }
 
-        // Run the simulation every 2.5 seconds
         setInterval(updateStatistics, 2500);
     </script>
 </body>
